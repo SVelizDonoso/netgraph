@@ -84,6 +84,6 @@ Este software se creo SOLAMENTE para fines educativos. No soy responsable de su 
 @sveliz https://github.com/SVelizDonoso/
 
 # Reporte HTML Demo
- https://svelizdonoso.github.io/netgraph/reportemap.html
+ link:https://svelizdonoso.github.io/netgraph/reportemap.html
  
  
