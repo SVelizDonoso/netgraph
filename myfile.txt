@@ -1,0 +1,7 @@
+192.168.1.1/24
+www.amazon.com
+www.ibm.com
+www.google.com
+www.nic.cl
+www.github.com
+www.wordpress.com

@@ -1,0 +1,238 @@
+
+	<!doctype html>
+	<html>
+	<head>
+	<meta autor"@svelizdonoso">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://visjs.org/dist/vis.js"></script>
+	<link href="http://visjs.org/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+	</head>
+	  <title>NetGraph</title>
+
+	  <style type="text/css">
+	    #mynetwork {
+	      width:100%;
+	      height: 800px;
+	      border: 1px solid lightgray;
+	    }
+	  </style>
+
+
+    
+     <script type="text/javascript">
+    var nodes = null;
+    var edges = null;
+    var network = null;
+
+    var DIR = 'http://visjs.org/examples/network/img/refresh-cl/Hardware-My-Computer-3-icon.png';
+    var EDGE_LENGTH_MAIN = 150;
+    var EDGE_LENGTH_SUB = 50;
+
+    // Called when the Visualization API is loaded.
+    function draw() {
+      // Create a data table with nodes.
+      nodes = [];
+
+      // Create a data table with links.
+      edges = [];
+
+      nodes.push({id: 4, label: '192.168.1.237', image: DIR , shape: 'image'});
+nodes.push({id: 50, label: '200.7.7.3', image: DIR , shape: 'image'});
+nodes.push({id: 57, label: 'unknown19', image: DIR , shape: 'image'});
+nodes.push({id: 28, label: '23.3.241.140', image: DIR , shape: 'image'});
+nodes.push({id: 66, label: '64.215.100.1', image: DIR , shape: 'image'});
+nodes.push({id: 59, label: 'unknown21', image: DIR , shape: 'image'});
+nodes.push({id: 58, label: 'unknown20', image: DIR , shape: 'image'});
+nodes.push({id: 65, label: 'unknown22', image: DIR , shape: 'image'});
+nodes.push({id: 52, label: '84.16.11.181', image: DIR , shape: 'image'});
+nodes.push({id: 3, label: '192.168.1.139', image: DIR , shape: 'image'});
+nodes.push({id: 20, label: '13.33.108.236', image: DIR , shape: 'image'});
+nodes.push({id: 53, label: '94.142.116.85', image: DIR , shape: 'image'});
+nodes.push({id: 8, label: '176.52.253.17', image: DIR , shape: 'image'});
+nodes.push({id: 11, label: '213.140.35.100', image: DIR , shape: 'image'});
+nodes.push({id: 37, label: 'unknown9', image: DIR , shape: 'image'});
+nodes.push({id: 67, label: '67.16.148.6', image: DIR , shape: 'image'});
+nodes.push({id: 9, label: '84.16.12.39', image: DIR , shape: 'image'});
+nodes.push({id: 7, label: '10.50.1.122', image: DIR , shape: 'image'});
+nodes.push({id: 17, label: 'unknown2', image: DIR , shape: 'image'});
+nodes.push({id: 18, label: 'unknown3', image: DIR , shape: 'image'});
+nodes.push({id: 15, label: 'unknown0', image: DIR , shape: 'image'});
+nodes.push({id: 16, label: 'unknown1', image: DIR , shape: 'image'});
+nodes.push({id: 34, label: 'unknown6', image: DIR , shape: 'image'});
+nodes.push({id: 35, label: 'unknown7', image: DIR , shape: 'image'});
+nodes.push({id: 19, label: 'unknown4', image: DIR , shape: 'image'});
+nodes.push({id: 25, label: 'unknown5', image: DIR , shape: 'image'});
+nodes.push({id: 23, label: '186.148.61.97', image: DIR , shape: 'image'});
+nodes.push({id: 12, label: '84.16.11.165', image: DIR , shape: 'image'});
+nodes.push({id: 33, label: '72.14.234.181', image: DIR , shape: 'image'});
+nodes.push({id: 10, label: '94.142.127.177', image: DIR , shape: 'image'});
+nodes.push({id: 48, label: '190.196.23.148', image: DIR , shape: 'image'});
+nodes.push({id: 55, label: 'unknown18', image: DIR , shape: 'image'});
+nodes.push({id: 22, label: '10.50.1.26', image: DIR , shape: 'image'});
+nodes.push({id: 27, label: '186.148.60.26', image: DIR , shape: 'image'});
+nodes.push({id: 31, label: '74.125.242.19', image: DIR , shape: 'image'});
+nodes.push({id: 47, label: '190.196.126.77', image: DIR , shape: 'image'});
+nodes.push({id: 24, label: '10.200.247.69', image: DIR , shape: 'image'});
+nodes.push({id: 39, label: 'unknown11', image: DIR , shape: 'image'});
+nodes.push({id: 40, label: 'unknown12', image: DIR , shape: 'image'});
+nodes.push({id: 41, label: 'unknown13', image: DIR , shape: 'image'});
+nodes.push({id: 42, label: 'unknown14', image: DIR , shape: 'image'});
+nodes.push({id: 43, label: 'unknown15', image: DIR , shape: 'image'});
+nodes.push({id: 46, label: 'unknown16', image: DIR , shape: 'image'});
+nodes.push({id: 54, label: 'unknown17', image: DIR , shape: 'image'});
+nodes.push({id: 30, label: '72.14.194.223', image: DIR , shape: 'image'});
+nodes.push({id: 68, label: '64.212.109.154', image: DIR , shape: 'image'});
+nodes.push({id: 13, label: '52.93.67.110', image: DIR , shape: 'image'});
+nodes.push({id: 2, label: '192.168.1.1', image: DIR , shape: 'image'});
+nodes.push({id: 26, label: '200.3.208.50', image: DIR , shape: 'image'});
+nodes.push({id: 1, label: '192.168.1.148', image: DIR , shape: 'image'});
+nodes.push({id: 36, label: 'unknown8', image: DIR , shape: 'image'});
+nodes.push({id: 60, label: '192.30.253.112', image: DIR , shape: 'image'});
+nodes.push({id: 49, label: '200.16.114.53', image: DIR , shape: 'image'});
+nodes.push({id: 5, label: '192.168.1.33', image: DIR , shape: 'image'});
+nodes.push({id: 32, label: '209.85.244.162', image: DIR , shape: 'image'});
+nodes.push({id: 14, label: '52.93.67.199', image: DIR , shape: 'image'});
+nodes.push({id: 56, label: '4.53.116.102', image: DIR , shape: 'image'});
+nodes.push({id: 63, label: '84.16.6.85', image: DIR , shape: 'image'});
+nodes.push({id: 64, label: '176.52.254.157', image: DIR , shape: 'image'});
+nodes.push({id: 62, label: '10.50.1.114', image: DIR , shape: 'image'});
+nodes.push({id: 44, label: '64.233.186.105', image: DIR , shape: 'image'});
+nodes.push({id: 69, label: '192.0.78.12', image: DIR , shape: 'image'});
+nodes.push({id: 6, label: '10.50.1.113', image: DIR , shape: 'image'});
+nodes.push({id: 38, label: 'unknown10', image: DIR , shape: 'image'});
+
+      edges.push({from: 1, to: 2, length: EDGE_LENGTH_MAIN});
+edges.push({from: 2, to: 1, length: EDGE_LENGTH_MAIN});
+edges.push({from: 1, to: 3, length: EDGE_LENGTH_MAIN});
+edges.push({from: 3, to: 1, length: EDGE_LENGTH_MAIN});
+edges.push({from: 1, to: 1, length: EDGE_LENGTH_MAIN});
+edges.push({from: 1, to: 1, length: EDGE_LENGTH_MAIN});
+edges.push({from: 1, to: 4, length: EDGE_LENGTH_MAIN});
+edges.push({from: 4, to: 1, length: EDGE_LENGTH_MAIN});
+edges.push({from: 1, to: 5, length: EDGE_LENGTH_MAIN});
+edges.push({from: 5, to: 1, length: EDGE_LENGTH_MAIN});
+edges.push({from: 1, to: 2, length: EDGE_LENGTH_MAIN});
+edges.push({from: 2, to: 6, length: EDGE_LENGTH_MAIN});
+edges.push({from: 6, to: 7, length: EDGE_LENGTH_MAIN});
+edges.push({from: 7, to: 8, length: EDGE_LENGTH_MAIN});
+edges.push({from: 8, to: 9, length: EDGE_LENGTH_MAIN});
+edges.push({from: 9, to: 10, length: EDGE_LENGTH_MAIN});
+edges.push({from: 10, to: 11, length: EDGE_LENGTH_MAIN});
+edges.push({from: 11, to: 12, length: EDGE_LENGTH_MAIN});
+edges.push({from: 12, to: 13, length: EDGE_LENGTH_MAIN});
+edges.push({from: 13, to: 14, length: EDGE_LENGTH_MAIN});
+edges.push({from: 14, to: 15, length: EDGE_LENGTH_MAIN});
+edges.push({from: 15, to: 16, length: EDGE_LENGTH_MAIN});
+edges.push({from: 16, to: 17, length: EDGE_LENGTH_MAIN});
+edges.push({from: 17, to: 18, length: EDGE_LENGTH_MAIN});
+edges.push({from: 18, to: 19, length: EDGE_LENGTH_MAIN});
+edges.push({from: 19, to: 20, length: EDGE_LENGTH_MAIN});
+edges.push({from: 1, to: 2, length: EDGE_LENGTH_MAIN});
+edges.push({from: 2, to: 6, length: EDGE_LENGTH_MAIN});
+edges.push({from: 6, to: 22, length: EDGE_LENGTH_MAIN});
+edges.push({from: 22, to: 23, length: EDGE_LENGTH_MAIN});
+edges.push({from: 23, to: 24, length: EDGE_LENGTH_MAIN});
+edges.push({from: 24, to: 25, length: EDGE_LENGTH_MAIN});
+edges.push({from: 25, to: 26, length: EDGE_LENGTH_MAIN});
+edges.push({from: 26, to: 27, length: EDGE_LENGTH_MAIN});
+edges.push({from: 27, to: 28, length: EDGE_LENGTH_MAIN});
+edges.push({from: 1, to: 2, length: EDGE_LENGTH_MAIN});
+edges.push({from: 2, to: 6, length: EDGE_LENGTH_MAIN});
+edges.push({from: 6, to: 22, length: EDGE_LENGTH_MAIN});
+edges.push({from: 22, to: 30, length: EDGE_LENGTH_MAIN});
+edges.push({from: 30, to: 31, length: EDGE_LENGTH_MAIN});
+edges.push({from: 31, to: 32, length: EDGE_LENGTH_MAIN});
+edges.push({from: 32, to: 33, length: EDGE_LENGTH_MAIN});
+edges.push({from: 33, to: 34, length: EDGE_LENGTH_MAIN});
+edges.push({from: 34, to: 35, length: EDGE_LENGTH_MAIN});
+edges.push({from: 35, to: 36, length: EDGE_LENGTH_MAIN});
+edges.push({from: 36, to: 37, length: EDGE_LENGTH_MAIN});
+edges.push({from: 37, to: 38, length: EDGE_LENGTH_MAIN});
+edges.push({from: 38, to: 39, length: EDGE_LENGTH_MAIN});
+edges.push({from: 39, to: 40, length: EDGE_LENGTH_MAIN});
+edges.push({from: 40, to: 41, length: EDGE_LENGTH_MAIN});
+edges.push({from: 41, to: 42, length: EDGE_LENGTH_MAIN});
+edges.push({from: 42, to: 43, length: EDGE_LENGTH_MAIN});
+edges.push({from: 43, to: 44, length: EDGE_LENGTH_MAIN});
+edges.push({from: 1, to: 2, length: EDGE_LENGTH_MAIN});
+edges.push({from: 2, to: 6, length: EDGE_LENGTH_MAIN});
+edges.push({from: 6, to: 7, length: EDGE_LENGTH_MAIN});
+edges.push({from: 7, to: 23, length: EDGE_LENGTH_MAIN});
+edges.push({from: 23, to: 46, length: EDGE_LENGTH_MAIN});
+edges.push({from: 46, to: 47, length: EDGE_LENGTH_MAIN});
+edges.push({from: 47, to: 48, length: EDGE_LENGTH_MAIN});
+edges.push({from: 48, to: 49, length: EDGE_LENGTH_MAIN});
+edges.push({from: 49, to: 50, length: EDGE_LENGTH_MAIN});
+edges.push({from: 1, to: 2, length: EDGE_LENGTH_MAIN});
+edges.push({from: 2, to: 6, length: EDGE_LENGTH_MAIN});
+edges.push({from: 6, to: 7, length: EDGE_LENGTH_MAIN});
+edges.push({from: 7, to: 52, length: EDGE_LENGTH_MAIN});
+edges.push({from: 52, to: 53, length: EDGE_LENGTH_MAIN});
+edges.push({from: 53, to: 54, length: EDGE_LENGTH_MAIN});
+edges.push({from: 54, to: 55, length: EDGE_LENGTH_MAIN});
+edges.push({from: 55, to: 56, length: EDGE_LENGTH_MAIN});
+edges.push({from: 56, to: 57, length: EDGE_LENGTH_MAIN});
+edges.push({from: 57, to: 58, length: EDGE_LENGTH_MAIN});
+edges.push({from: 58, to: 59, length: EDGE_LENGTH_MAIN});
+edges.push({from: 59, to: 60, length: EDGE_LENGTH_MAIN});
+edges.push({from: 1, to: 2, length: EDGE_LENGTH_MAIN});
+edges.push({from: 2, to: 6, length: EDGE_LENGTH_MAIN});
+edges.push({from: 6, to: 62, length: EDGE_LENGTH_MAIN});
+edges.push({from: 62, to: 63, length: EDGE_LENGTH_MAIN});
+edges.push({from: 63, to: 9, length: EDGE_LENGTH_MAIN});
+edges.push({from: 9, to: 64, length: EDGE_LENGTH_MAIN});
+edges.push({from: 64, to: 65, length: EDGE_LENGTH_MAIN});
+edges.push({from: 65, to: 66, length: EDGE_LENGTH_MAIN});
+edges.push({from: 66, to: 67, length: EDGE_LENGTH_MAIN});
+edges.push({from: 67, to: 68, length: EDGE_LENGTH_MAIN});
+edges.push({from: 68, to: 69, length: EDGE_LENGTH_MAIN});
+
+      
+      edges.push({from: 1, to: 2, length: EDGE_LENGTH_MAIN});
+      
+      // create a network
+      var container = document.getElementById('mynetwork');
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      var options = {
+        interaction: {
+          navigationButtons: true,
+          keyboard: true
+        }
+      };
+      network = new vis.Network(container, data, options);
+    }
+  </script>
+
+    
+		<body onload="draw()">
+                       <div class="container" id='content'>
+
+
+					<div class="jumbotron">
+                                          
+					  	<table border ="0">
+						<tr>
+							<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Radar2.gif/200px-Radar2.gif" width="180" height="180"></td>
+							<td>
+								<h1 class="display-4">NetGraph</h1>
+								  <p class="lead">Identificador de Topologia de RED</p>
+							</td>
+						</tr>
+						</table>
+					</div>
+		                       <div id="mynetwork"></div>
+			        </div>
+		        <div class="footer">
+				<br><br>
+  			    <center><p>NetGraph-2018 - Developer @svelizdonoso </p></center>
+				<br><br>
+		       </div>
+		</body>
+		</html>
+	
